@@ -1,3 +1,5 @@
+// Time Complicity: O(n ^ 2)
+
 function _sort(list) {
   const firstEle = list.slice(0, 1)[0];
   const lastEle = list.slice(-1)[0];

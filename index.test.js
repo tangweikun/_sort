@@ -1,5 +1,5 @@
 // const _sort = require('./index.basic');
-const _sort = require('.');
+const _sort = require('./index.faster');
 
 describe('_sort', () => {
   it('should be defined', () => {
@@ -52,16 +52,6 @@ describe('All elements are negative integers', () => {
 });
 
 describe('The list contains all integers', () => {
-  it('descending sort, should equal [9, 4, 1, 0]', () => {
-    const originList = [0, -1, -2, -3];
-    expect(_sort(originList)).toEqual([9, 4, 1, 0]);
-  });
-
-  it('ascending sort, should equal [0, 1, 4, 9]', () => {
-    const originList = [0, 1, 2, 3];
-    expect(_sort(originList)).toEqual([0, 1, 4, 9]);
-  });
-
   it('ascending sort, should equal [1, 1, 4, 9]', () => {
     const originList = [-3, -2, -1, 1];
     expect(_sort(originList)).toEqual([1, 1, 4, 9]);
@@ -90,5 +80,44 @@ describe('The list contains all integers', () => {
   it('ascending sort, should equal [0, 1, 4, 16, 25, 36]', () => {
     const originList = [7, 2, 1, 0, -4, -5, -6];
     expect(_sort(originList)).toEqual([49, 36, 25, 16, 4, 1, 0]);
+  });
+});
+
+describe('All elements are negative integers', () => {
+  it('descending sort, should equal [9, 4, 1]', () => {
+    const originList = [-1, -2, -3];
+    expect(_sort(originList)).toEqual([9, 4, 1]);
+  });
+
+  it('ascending sort, should equal [4, 4, 4]', () => {
+    const originList = [-2, -2, -2];
+    expect(_sort(originList)).toEqual([4, 4, 4]);
+  });
+
+  it('ascending sort, should equal [1, 4, 9]', () => {
+    const originList = [-3, -2, -1];
+    expect(_sort(originList)).toEqual([1, 4, 9]);
+  });
+});
+
+describe('special condition', () => {
+  it('descending sort, all non-positive integers, should equal [9, 4, 1, 0]', () => {
+    const originList = [0, -1, -2, -3];
+    expect(_sort(originList)).toEqual([9, 4, 1, 0]);
+  });
+
+  it('descending sort, all non-negative integers, should equal [9, 4, 1, 0]', () => {
+    const originList = [3, 2, 1, 0];
+    expect(_sort(originList)).toEqual([9, 4, 1, 0]);
+  });
+
+  it('ascending sort, all non-negative integers, should equal [0, 1, 4, 9]', () => {
+    const originList = [0, 1, 2, 3];
+    expect(_sort(originList)).toEqual([0, 1, 4, 9]);
+  });
+
+  it('ascending sort, all non-positive integers, should equal [1, 1, 4, 9]', () => {
+    const originList = [-3, -2, -1, 0];
+    expect(_sort(originList)).toEqual([0, 1, 4, 9]);
   });
 });
