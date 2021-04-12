@@ -1,4 +1,12 @@
 function _sort(list) {
+  return square(basicSort(list));
+}
+
+function square(list) {
+  return list.map((n) => Math.pow(n, 2));
+}
+
+function basicSort(list) {
   const firstEle = list.slice(0, 1)[0];
   const lastEle = list.slice(-1)[0];
 
@@ -9,7 +17,7 @@ function _sort(list) {
   // ascending sort, all non-negative integers
   // descending sort, all non-negative integers
   if ((isAsc && firstEle >= 0) || (!isAsc && lastEle >= 0)) {
-    return list.map((n) => Math.pow(n, 2));
+    return list;
   }
 
   // Time Complicity: O(n)
@@ -18,7 +26,7 @@ function _sort(list) {
   if ((isAsc && lastEle <= 0) || (!isAsc && firstEle <= 0)) {
     const res = [];
     for (let i = list.length - 1; i >= 0; i--) {
-      res.push(Math.pow(list[i], 2));
+      res.push(list[i]);
     }
     return res;
   }
@@ -36,7 +44,7 @@ function _sort(list) {
     res[j] = temp;
   }
 
-  return res.map((n) => Math.pow(n, 2));
+  return res;
 }
 
 module.exports = _sort;
