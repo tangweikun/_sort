@@ -3,22 +3,23 @@ function _sort(list) {
   const lastEle = list.slice(-1)[0];
 
   // Decide whether to ascend or descend
-  const lastMinusFirst = lastEle - firstEle;
+  const isAscending = lastEle - firstEle >= 0;
 
-  const res = list.map((n) => Math.pow(n, 2));
+  // generate a new list
+  const res = [...list];
 
   for (let i = 1; i < res.length; i++) {
-    const temp = res[i];
+    const temp = Math.abs(res[i]);
     let j = i;
 
-    while (lastMinusFirst >= 0 ? res[j - 1] > temp : res[j - 1] < temp) {
+    while (isAscending ? Math.abs(res[j - 1]) > temp : Math.abs(res[j - 1]) < temp) {
       res[j] = res[j - 1];
       j--;
     }
     res[j] = temp;
   }
 
-  return res;
+  return res.map((n) => Math.pow(n, 2));
 }
 
 module.exports = _sort;

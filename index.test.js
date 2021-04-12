@@ -1,4 +1,5 @@
-const _sort = require('./index.basic');
+// const _sort = require('./index.basic');
+const _sort = require('.');
 
 describe('_sort', () => {
   it('should be defined', () => {
@@ -69,5 +70,25 @@ describe('The list contains all integers', () => {
   it('ascending sort, should equal [0, 1, 1, 4, 9]', () => {
     const originList = [-3, -2, -1, 0, 1];
     expect(_sort(originList)).toEqual([0, 1, 1, 4, 9]);
+  });
+
+  it('ascending sort, should equal [0, 1, 4, 16, 25, 36]', () => {
+    const originList = [-6, -5, -4, 0, 1, 2];
+    expect(_sort(originList)).toEqual([0, 1, 4, 16, 25, 36]);
+  });
+
+  it('ascending sort, should equal [0, 1, 4, 16, 25, 36]', () => {
+    const originList = [-6, -5, -4, 0, 1, 2];
+    expect(_sort(originList)).toEqual([0, 1, 4, 16, 25, 36]);
+  });
+
+  it('ascending sort, should equal [0, 1, 16, 25, 36, 49]', () => {
+    const originList = [-6, -4, 0, 1, 5, 7];
+    expect(_sort(originList)).toEqual([0, 1, 16, 25, 36, 49]);
+  });
+
+  it('ascending sort, should equal [0, 1, 4, 16, 25, 36]', () => {
+    const originList = [7, 2, 1, 0, -4, -5, -6];
+    expect(_sort(originList)).toEqual([49, 36, 25, 16, 4, 1, 0]);
   });
 });
