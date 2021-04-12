@@ -1,10 +1,22 @@
 const _sort = require('./index.basic');
 
-describe('All elements are positive integers', () => {
+describe('_sort', () => {
   it('should be defined', () => {
     expect(_sort).toBeDefined();
   });
 
+  it('empty list, should equal []', () => {
+    const originList = [];
+    expect(_sort(originList)).toEqual([]);
+  });
+
+  it('only have one element, should equal [4]', () => {
+    const originList = [-2];
+    expect(_sort(originList)).toEqual([4]);
+  });
+});
+
+describe('All elements are positive integers', () => {
   it('ascending sort, should equal [1, 4, 9]', () => {
     const originList = [1, 2, 3];
     expect(_sort(originList)).toEqual([1, 4, 9]);
