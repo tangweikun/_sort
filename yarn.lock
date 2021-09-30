@@ -690,6 +690,14 @@ arr-union@^3.1.0:
   resolved "https://registry.yarnpkg.com/arr-union/-/arr-union-3.1.0.tgz#e39b09aea9def866a8f206e288af63919bae39c4"
   integrity sha1-45sJrqne+Gao8gbiiK9jkZuuOcQ=
 
+array-to-tree@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.npm.taobao.org/array-to-tree/download/array-to-tree-3.3.2.tgz#06da2f3815a906a99aaa5ad793a39114db36da52"
+  integrity sha1-BtovOBWpBqmaqlrXk6ORFNs22lI=
+  dependencies:
+    lodash.keyby "^4.6.0"
+    nested-property "^0.0.7"
+
 array-unique@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/array-unique/-/array-unique-0.3.2.tgz#a894b75d4bc4f6cd679ef3244a9fd8f46ae2d428"
@@ -2394,6 +2402,11 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
+lodash.keyby@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.npm.taobao.org/lodash.keyby/download/lodash.keyby-4.6.0.tgz#7f6a1abda93fd24e22728a4d361ed8bcba5a4354"
+  integrity sha1-f2oavak/0k4icopNNh7YvLpaQ1Q=
+
 lodash@^4.17.19, lodash@^4.7.0:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
@@ -2532,6 +2545,11 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
+
+nested-property@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.npm.taobao.org/nested-property/download/nested-property-0.0.7.tgz#ff222f233ca8793c6828b4117091bea597130f4f"
+  integrity sha1-/yIvIzyoeTxoKLQRcJG+pZcTD08=
 
 nice-try@^1.0.4:
   version "1.0.5"
